@@ -1,5 +1,6 @@
 import { Router } from "express";
 import testRoute from "./test.route";
+import botRoute from "./bot.route";
 
 // RouterConfig class that manages the routing configuration
 export class RouterConfig {
@@ -11,6 +12,7 @@ export class RouterConfig {
     // Use the "test" route from the imported testRoute
     // The "/test" route will be handled by the testRoute.router
     RouterConfig.router.use("/test", testRoute.router);
+    RouterConfig.router.use("/bot", botRoute.router);
   }
 
   // Public method to initialize the routes by calling the "routes" method
