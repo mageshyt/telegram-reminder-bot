@@ -15,6 +15,15 @@ export class BotController {
     }
   };
 
+  public sendMessage = (req: any, res: any) => {
+    try {
+      const { chatId, message } = req.body;
+      botService.sendMessage(chatId, message);
+      res.status(200).json({ message: "message sent successfully" });
+    } catch (error: any) {
+      res.status(500).json({ message: error.message });
+    }
+  };
   public morningGreeting = (req: any, res: any) => {
     const morning = schedule.scheduleJob("*/3 * * * *", function () {
       const message = "Good Morning! Have a nice day ahead.";

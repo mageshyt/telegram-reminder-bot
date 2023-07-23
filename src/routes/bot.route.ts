@@ -18,6 +18,7 @@ class BotRoute {
   }
   routes() {
     this.router.get("/", this.bot_controller.start);
+    this.router.post("/sendMessage", this.bot_controller.sendMessage);
     // this.router.get("/morning", this.bot_controller.morningGreeting);
   }
 }

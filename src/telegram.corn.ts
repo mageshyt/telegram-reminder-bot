@@ -4,8 +4,9 @@ import botService from "./service/bot.service";
 import { setReminder } from "./utils/schedule.utils";
 
 export const morningGreeting = new CronJob(
-  "*/3 * * * *",
+  "*/5 * * * *",
   function () {
+    console.log("👉 morningGreeting started");
     const message = "Good Morning! Have a nice day ahead.";
     console.log("👉 reminder", message);
     botService.sendMessage(924444645, message);
