@@ -18,7 +18,7 @@ class BotRoute {
   }
   routes() {
     this.router.get("/", this.bot_controller.start);
-    this.router.get("/morning", this.bot_controller.morningGreeting);
+    // this.router.get("/morning", this.bot_controller.morningGreeting);
   }
 }
 

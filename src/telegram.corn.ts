@@ -3,6 +3,22 @@ import { CronJob } from "cron";
 import botService from "./service/bot.service";
 import { setReminder } from "./utils/schedule.utils";
 
+export const morningGreeting = new CronJob(
+  "*/3 * * * *",
+  function () {
+    const message = "Good Morning! Have a nice day ahead.";
+    console.log("👉 reminder", message);
+    botService.sendMessage(924444645, message);
+    botService.sendAnimation(
+      924444645,
+      "https://media.giphy.com/media/dzMu8oCKwBbpUFMBNs/giphy.gif"
+    );
+  },
+
+  null,
+  false
+);
+
 export const classRemainder = new CronJob(
   "*/50 * * * *",
   function () {

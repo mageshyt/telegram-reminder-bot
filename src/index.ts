@@ -3,7 +3,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 import { RouterConfig } from "./routes";
 import morgan from "morgan";
-import { classRemainder } from "./telegram.corn";
+import { classRemainder, morningGreeting } from "./telegram.corn";
 require("dotenv").config();
 
 // App class to create and configure the Express application
@@ -31,6 +31,7 @@ class App {
     RouterConfig.initializeRoutes();
 
     classRemainder.start();
+    morningGreeting.start();
   }
 
   // Method to configure and set up middlewares
